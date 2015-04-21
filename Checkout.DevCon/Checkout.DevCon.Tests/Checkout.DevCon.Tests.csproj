@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiHelper.cs" />
+    <Compile Include="Countries.cs" />
+    <Compile Include="Countries.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Countries.feature</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.feature.cs">
@@ -63,11 +70,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Countries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Countries.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Checkout.DevConf\Checkout.DevCon.csproj">
+      <Project>{2c23adb8-348c-48db-9530-8bb2410eb03c}</Project>
+      <Name>Checkout.DevCon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

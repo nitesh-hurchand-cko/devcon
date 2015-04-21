@@ -19,8 +19,8 @@ namespace Checkout.DevCon.Tests
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Account")]
-    public partial class AccountFeature
+    [NUnit.Framework.DescriptionAttribute("Login")]
+    public partial class LoginFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -32,8 +32,8 @@ namespace Checkout.DevCon.Tests
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Account", "In order to avoid silly mistakes\r\nAs a math idiot\r\nI want to be told the sum of t" +
-                    "wo numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "In order to login successfully\r\nAs a member of the site\r\nSo that member can log i" +
+                    "n to the site and use its features", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,9 +75,9 @@ namespace Checkout.DevCon.Tests
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have a username Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a username Yusraa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("I have a password Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have a password Kirtee!", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.When("I send a request to log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
@@ -96,9 +96,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 15
- testRunner.Given("I have a username admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have a username Yusraa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
- testRunner.And("I have a password admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have a password Kirtee123!", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.When("I send a request to log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
