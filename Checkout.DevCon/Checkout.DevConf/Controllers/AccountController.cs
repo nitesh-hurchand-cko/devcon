@@ -9,14 +9,20 @@ namespace Checkout.DevCon.Controllers
     [RoutePrefix("account")]
     public class AccountController : ApiController
     {
+        private readonly ILoginModelValidator _loginModelValidator;
+
+        public AccountController(ILoginModelValidator loginModelValidator)
+        {
+            _loginModelValidator = loginModelValidator;
+        }
+
         [Route("login")]
         public object Post([FromBody] LoginModel loginModel)
         {
             if (loginModel == null)
                 return "Required fields missing.";
 
-            var validator = new LoginModelValidator();
-            var validationResults = validator.Validate(loginModel);
+            var validationResults = _loginModelValidator.Validate(loginModel);
 
             if (!validationResults.IsValid)
                 return validationResults.Errors.Select(x => x.ErrorMessage);
