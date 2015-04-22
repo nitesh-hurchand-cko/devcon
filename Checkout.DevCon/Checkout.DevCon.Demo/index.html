@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dev COnference 2015</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+    <button id="cors">Cors Demo</button>
+
+    <script>
+        $("#cors").click(function () {
+            var jqxhr = $.ajax({
+                method: "POST",
+                url: "http://localhost/Checkout.DevCon/account/login",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                data: JSON.stringify({ username: "John", password: "Boston" })
+            })
+             .done(function (data) {
+                 alert(JSON.stringify(data));
+             })
+             .fail(function () {
+                 alert("error");
+             });
+        });
+    </script>
+</body>
+</html>

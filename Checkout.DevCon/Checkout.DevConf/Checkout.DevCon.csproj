@@ -181,7 +181,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\LookupController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ThrowExceptionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Formatters\CustomJsonMediaTypeFormatter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +214,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="NLog.config" />
+    <Content Include="App_Data\logs\ErrorLogs-2015-04-21.log" />
+    <Content Include="App_Data\logs\ErrorLogs-2015-04-22.log" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>

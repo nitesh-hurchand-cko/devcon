@@ -23,26 +23,32 @@ namespace Checkout.DevCon.Handlers
         /// <returns></returns>
         public override Task<HttpResponseMessage> ExecuteAsync(System.Threading.CancellationToken cancellationToken)
         {
-            var message = new HttpResponseMessage
+            var message = Request.CreateResponse(HttpStatusCode.BadRequest, new
             {
-                RequestMessage = Request,
-                StatusCode = HttpStatusCode.BadRequest
-            };
+                ErrorCode = 50000,
+                ErrorMessage = "Something went wrong with the data you have sent."
+            });
 
-            var result = ContentNegotiator.Negotiate(typeof(object), Request, Formatters);
+            //var message = new HttpResponseMessage
+            //{
+            //    RequestMessage = Request,
+            //    StatusCode = HttpStatusCode.BadRequest,
+            //};
 
-            if (result != null)
-            {
-                try
-                {
-                    message.Content = new ObjectContent<object>(message, result.Formatter, result.MediaType);
-                }
-                catch (Exception)
-                {
-                    message.Dispose();
-                    throw;
-                }
-            }
+            //var result = ContentNegotiator.Negotiate(typeof(object), Request, Formatters);
+
+            //if (result != null)
+            //{
+            //    try
+            //    {
+            //        message.Content = new ObjectContent<object>(message, result.Formatter, result.MediaType);
+            //    }
+            //    catch (Exception)
+            //    {
+            //        message.Dispose();
+            //        throw;
+            //    }
+            //}
             return Task.FromResult(message);
         }
     }
