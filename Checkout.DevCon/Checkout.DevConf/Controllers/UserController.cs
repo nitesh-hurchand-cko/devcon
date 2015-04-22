@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
+using System.Threading;
 using Checkout.DevCon.Models;
 using Checkout.DevCon.Validators;
 using FluentValidation.Results;
@@ -14,15 +16,42 @@ namespace Checkout.DevCon.Controllers
     //[RoutePrefix("users")]
     public class UserController : ApiController
     {
+        private readonly IUserModelValidator _userModelValidator;
+
+        public UserController(IUserModelValidator userModelValidator)
+        {
+            _userModelValidator = userModelValidator;
+        }
+
         [Route("users")]
         public object Post(CreateUserModel model)
         {
+            var browserLocale = "en";
+            try
+            {
+                browserLocale = Request.Headers.GetValues("Locale").FirstOrDefault();
+            }
+            catch 
+            {
+            }
+
+
+            if (!string.IsNullOrWhiteSpace(browserLocale) && browserLocale.Contains("fr"))
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("fr");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr");
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            }
+
             const string locale = "en";
             if (model == null)
                 return "Required fields missing.";
 
-            UserModelValidator userModelValidator = new UserModelValidator();
-            ValidationResult validationResults = userModelValidator.Validate(model);
+            ValidationResult validationResults = _userModelValidator.Validate(model);
             if (!validationResults.IsValid)
             {
                 return validationResults.Errors.Select(x => x.ErrorMessage);
@@ -58,8 +87,7 @@ namespace Checkout.DevCon.Controllers
             if (model == null)
                 return "Required fields missing.";
 
-            UserModelValidator userModelValidator = new UserModelValidator();
-           ValidationResult validationResults = userModelValidator.Validate(model);
+            ValidationResult validationResults = _userModelValidator.Validate(model);
             if (!validationResults.IsValid)
             {
                 return validationResults.Errors.Select(x => x.ErrorMessage);

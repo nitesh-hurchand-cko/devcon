@@ -210,6 +210,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserModelResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\UserModelResources.FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserModelResources.FR.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\LoginModelValidator.cs" />
     <Compile Include="Validators\AddressModelValidator.cs" />
@@ -232,9 +237,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\UserModelResources.FR.resx" />
+    <EmbeddedResource Include="Resources\UserModelResources.FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserModelResources.FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\UserModelResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UserModelResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

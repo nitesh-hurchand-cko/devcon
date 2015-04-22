@@ -16,3 +16,165 @@
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
    at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             
+2015-04-22 10:52:16.6151              COMPONENTNAME:Checkout.DevCon.Controllers.ThrowExceptionController             METHODNAME:Get             SERVERNAME:PC-NITESH             MESSAGE:Application Error             STACKTRACE:   at Checkout.DevCon.Controllers.ThrowExceptionController.Get() in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Controllers\ThrowExceptionController.cs:line 12
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             
+2015-04-22 12:03:54.5458              COMPONENTNAME:FluentValidation.Resources.StaticResourceAccessorBuilder             METHODNAME:GetResourceAccessor             SERVERNAME:PC-NITESH             MESSAGE:Could not find a property named 'FirstNameRequired' on type 'Checkout.DevCon.Resources.UserModelResources'.             STACKTRACE:   at FluentValidation.Resources.StaticResourceAccessorBuilder.GetResourceAccessor(Type resourceType, String resourceName) in c:\Projects\FluentValidation\src\FluentValidation\Resources\IResourceAccessorBuilder.cs:line 29
+   at FluentValidation.Resources.LocalizedStringSource..ctor(Type resourceType, String resourceName, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\Resources\LocalizedStringSource.cs:line 42
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass1f`2.<WithLocalizedMessage>b__1e(PropertyRule config) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 170
+   at FluentValidation.Internal.RuleBuilder`2.FluentValidation.Internal.IConfigurable<FluentValidation.Internal.PropertyRule,FluentValidation.IRuleBuilderOptions<T,TProperty>>.Configure(Action`1 configurator) in c:\Projects\FluentValidation\src\FluentValidation\Internal\RuleBuilder.cs:line 68
+   at FluentValidation.DefaultValidatorOptions.WithLocalizedMessage[T,TProperty](IRuleBuilderOptions`2 rule, Expression`1 resourceSelector, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 169
+   at Checkout.DevCon.Validators.UserModelValidator..ctor() in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Validators\UserModelValidator.cs:line 14
+   at Checkout.DevCon.Controllers.UserController.Post(CreateUserModel model) in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Controllers\UserController.cs:line 24
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             
+2015-04-22 12:05:24.5470              COMPONENTNAME:FluentValidation.Resources.StaticResourceAccessorBuilder             METHODNAME:GetResourceAccessor             SERVERNAME:PC-NITESH             MESSAGE:Could not find a property named 'FirstNameRequired' on type 'Checkout.DevCon.Resources.UserModelResources'.             STACKTRACE:   at FluentValidation.Resources.StaticResourceAccessorBuilder.GetResourceAccessor(Type resourceType, String resourceName) in c:\Projects\FluentValidation\src\FluentValidation\Resources\IResourceAccessorBuilder.cs:line 29
+   at FluentValidation.Resources.LocalizedStringSource..ctor(Type resourceType, String resourceName, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\Resources\LocalizedStringSource.cs:line 42
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass1f`2.<WithLocalizedMessage>b__1e(PropertyRule config) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 170
+   at FluentValidation.Internal.RuleBuilder`2.FluentValidation.Internal.IConfigurable<FluentValidation.Internal.PropertyRule,FluentValidation.IRuleBuilderOptions<T,TProperty>>.Configure(Action`1 configurator) in c:\Projects\FluentValidation\src\FluentValidation\Internal\RuleBuilder.cs:line 68
+   at FluentValidation.DefaultValidatorOptions.WithLocalizedMessage[T,TProperty](IRuleBuilderOptions`2 rule, Expression`1 resourceSelector, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 169
+   at Checkout.DevCon.Validators.UserModelValidator..ctor() in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Validators\UserModelValidator.cs:line 14
+   at Checkout.DevCon.Controllers.UserController.Post(CreateUserModel model) in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Controllers\UserController.cs:line 24
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             
+2015-04-22 12:06:36.7410              COMPONENTNAME:FluentValidation.Resources.StaticResourceAccessorBuilder             METHODNAME:GetResourceAccessor             SERVERNAME:PC-NITESH             MESSAGE:Could not find a property named 'FirstNameRequired' on type 'Checkout.DevCon.Resources.UserModelResources'.             STACKTRACE:   at FluentValidation.Resources.StaticResourceAccessorBuilder.GetResourceAccessor(Type resourceType, String resourceName) in c:\Projects\FluentValidation\src\FluentValidation\Resources\IResourceAccessorBuilder.cs:line 29
+   at FluentValidation.Resources.LocalizedStringSource..ctor(Type resourceType, String resourceName, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\Resources\LocalizedStringSource.cs:line 42
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass1f`2.<WithLocalizedMessage>b__1e(PropertyRule config) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 170
+   at FluentValidation.Internal.RuleBuilder`2.FluentValidation.Internal.IConfigurable<FluentValidation.Internal.PropertyRule,FluentValidation.IRuleBuilderOptions<T,TProperty>>.Configure(Action`1 configurator) in c:\Projects\FluentValidation\src\FluentValidation\Internal\RuleBuilder.cs:line 68
+   at FluentValidation.DefaultValidatorOptions.WithLocalizedMessage[T,TProperty](IRuleBuilderOptions`2 rule, Expression`1 resourceSelector, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 169
+   at Checkout.DevCon.Validators.UserModelValidator..ctor() in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Validators\UserModelValidator.cs:line 14
+   at Checkout.DevCon.Controllers.UserController.Post(CreateUserModel model) in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Controllers\UserController.cs:line 24
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             
+2015-04-22 12:07:40.1440              COMPONENTNAME:FluentValidation.Resources.StaticResourceAccessorBuilder             METHODNAME:GetResourceAccessor             SERVERNAME:PC-NITESH             MESSAGE:Could not find a property named 'FirstNameRequired' on type 'Checkout.DevCon.Resources.UserModelResources'.             STACKTRACE:   at FluentValidation.Resources.StaticResourceAccessorBuilder.GetResourceAccessor(Type resourceType, String resourceName) in c:\Projects\FluentValidation\src\FluentValidation\Resources\IResourceAccessorBuilder.cs:line 29
+   at FluentValidation.Resources.LocalizedStringSource..ctor(Type resourceType, String resourceName, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\Resources\LocalizedStringSource.cs:line 42
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass1f`2.<WithLocalizedMessage>b__1e(PropertyRule config) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 170
+   at FluentValidation.Internal.RuleBuilder`2.FluentValidation.Internal.IConfigurable<FluentValidation.Internal.PropertyRule,FluentValidation.IRuleBuilderOptions<T,TProperty>>.Configure(Action`1 configurator) in c:\Projects\FluentValidation\src\FluentValidation\Internal\RuleBuilder.cs:line 68
+   at FluentValidation.DefaultValidatorOptions.WithLocalizedMessage[T,TProperty](IRuleBuilderOptions`2 rule, Expression`1 resourceSelector, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 169
+   at Checkout.DevCon.Validators.UserModelValidator..ctor() in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Validators\UserModelValidator.cs:line 14
+   at Checkout.DevCon.Controllers.UserController.Post(CreateUserModel model) in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Controllers\UserController.cs:line 24
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             
+2015-04-22 12:11:03.5556              COMPONENTNAME:FluentValidation.Resources.StaticResourceAccessorBuilder             METHODNAME:GetResourceAccessor             SERVERNAME:PC-NITESH             MESSAGE:Could not find a property named 'FirstNameRequired' on type 'Checkout.DevCon.Resources.UserModelResources'.             STACKTRACE:   at FluentValidation.Resources.StaticResourceAccessorBuilder.GetResourceAccessor(Type resourceType, String resourceName) in c:\Projects\FluentValidation\src\FluentValidation\Resources\IResourceAccessorBuilder.cs:line 29
+   at FluentValidation.Resources.LocalizedStringSource..ctor(Type resourceType, String resourceName, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\Resources\LocalizedStringSource.cs:line 42
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass1f`2.<WithLocalizedMessage>b__1e(PropertyRule config) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 170
+   at FluentValidation.Internal.RuleBuilder`2.FluentValidation.Internal.IConfigurable<FluentValidation.Internal.PropertyRule,FluentValidation.IRuleBuilderOptions<T,TProperty>>.Configure(Action`1 configurator) in c:\Projects\FluentValidation\src\FluentValidation\Internal\RuleBuilder.cs:line 68
+   at FluentValidation.DefaultValidatorOptions.WithLocalizedMessage[T,TProperty](IRuleBuilderOptions`2 rule, Expression`1 resourceSelector, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 169
+   at Checkout.DevCon.Validators.UserModelValidator..ctor() in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Validators\UserModelValidator.cs:line 14
+   at Checkout.DevCon.Controllers.UserController.Post(CreateUserModel model) in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Controllers\UserController.cs:line 24
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             
+2015-04-22 12:14:16.6769              COMPONENTNAME:FluentValidation.Resources.StaticResourceAccessorBuilder             METHODNAME:GetResourceAccessor             SERVERNAME:PC-NITESH             MESSAGE:Could not find a property named 'FirstNameRequired' on type 'Checkout.DevCon.Resources.UserModelResources'.             STACKTRACE:   at FluentValidation.Resources.StaticResourceAccessorBuilder.GetResourceAccessor(Type resourceType, String resourceName) in c:\Projects\FluentValidation\src\FluentValidation\Resources\IResourceAccessorBuilder.cs:line 29
+   at FluentValidation.Resources.LocalizedStringSource..ctor(Type resourceType, String resourceName, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\Resources\LocalizedStringSource.cs:line 42
+   at FluentValidation.DefaultValidatorOptions.<>c__DisplayClass1f`2.<WithLocalizedMessage>b__1e(PropertyRule config) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 170
+   at FluentValidation.Internal.RuleBuilder`2.FluentValidation.Internal.IConfigurable<FluentValidation.Internal.PropertyRule,FluentValidation.IRuleBuilderOptions<T,TProperty>>.Configure(Action`1 configurator) in c:\Projects\FluentValidation\src\FluentValidation\Internal\RuleBuilder.cs:line 68
+   at FluentValidation.DefaultValidatorOptions.WithLocalizedMessage[T,TProperty](IRuleBuilderOptions`2 rule, Expression`1 resourceSelector, IResourceAccessorBuilder resourceAccessorBuilder) in c:\Projects\FluentValidation\src\FluentValidation\DefaultValidatorOptions.cs:line 169
+   at Checkout.DevCon.Validators.UserModelValidator..ctor() in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Validators\UserModelValidator.cs:line 16
+   at Checkout.DevCon.Controllers.UserController.Post(CreateUserModel model) in d:\PROJECTS\devcon\Checkout.DevCon\Checkout.DevConf\Controllers\UserController.cs:line 24
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()             

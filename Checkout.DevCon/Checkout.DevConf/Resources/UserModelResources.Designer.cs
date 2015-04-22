@@ -22,7 +22,7 @@ namespace Checkout.DevCon.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class UserModelResources {
+    public class UserModelResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Checkout.DevCon.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Checkout.DevCon.Resources.UserModelResources", typeof(UserModelResources).Assembly);
@@ -51,7 +51,7 @@ namespace Checkout.DevCon.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Address line 1 is required..
         /// </summary>
-        internal static string AddressLine1Required {
+        public static string AddressLine1Required {
             get {
                 return ResourceManager.GetString("AddressLine1Required", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to City is required..
         /// </summary>
-        internal static string CityRequired {
+        public static string CityRequired {
             get {
                 return ResourceManager.GetString("CityRequired", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Country is required..
         /// </summary>
-        internal static string CountryRequired {
+        public static string CountryRequired {
             get {
                 return ResourceManager.GetString("CountryRequired", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Email address is invalid..
         /// </summary>
-        internal static string EmailInvalid {
+        public static string EmailInvalid {
             get {
                 return ResourceManager.GetString("EmailInvalid", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to First name is required..
         /// </summary>
-        internal static string FirstNameRequired {
+        public static string FirstNameRequired {
             get {
                 return ResourceManager.GetString("FirstNameRequired", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Last name is required..
         /// </summary>
-        internal static string LastNameRequired {
+        public static string LastNameRequired {
             get {
                 return ResourceManager.GetString("LastNameRequired", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Invalid length for Password..
         /// </summary>
-        internal static string PasswordLengthInvalid {
+        public static string PasswordLengthInvalid {
             get {
                 return ResourceManager.GetString("PasswordLengthInvalid", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Password is required..
         /// </summary>
-        internal static string PasswordRequired {
+        public static string PasswordRequired {
             get {
                 return ResourceManager.GetString("PasswordRequired", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Phone number is required..
         /// </summary>
-        internal static string PhoneNumberRequired {
+        public static string PhoneNumberRequired {
             get {
                 return ResourceManager.GetString("PhoneNumberRequired", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Residential Address is required..
         /// </summary>
-        internal static string ResidentialAddressErrorMessage {
+        public static string ResidentialAddressErrorMessage {
             get {
                 return ResourceManager.GetString("ResidentialAddressErrorMessage", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Checkout.DevCon.Resources {
         /// <summary>
         ///   Looks up a localized string similar to State is required..
         /// </summary>
-        internal static string StateRequired {
+        public static string StateRequired {
             get {
                 return ResourceManager.GetString("StateRequired", resourceCulture);
             }

@@ -8,8 +8,15 @@ namespace Checkout.DevCon.Validators
 {
     public class UserModelValidator : AbstractValidator<CreateUserModel>, IUserModelValidator
     {
-        public UserModelValidator()
+        private readonly IPhoneModelValidator _phoneModelValidator;
+        private readonly IAddressModelValidator _addressModelValidator;
+
+        public UserModelValidator(IPhoneModelValidator phoneModelValidator,
+            IAddressModelValidator addressModelValidator)
         {
+            _phoneModelValidator = phoneModelValidator;
+            _addressModelValidator = addressModelValidator;
+
             //NotNull Validator
             RuleFor(createUserModel => createUserModel.FirstName)
                 .NotNull()
@@ -47,8 +54,8 @@ namespace Checkout.DevCon.Validators
                 .WithLocalizedMessage(() => UserModelResources.ResidentialAddressErrorMessage);
 
             //complex properties
-            RuleFor(createUserModel => createUserModel.ResidentialAddress).SetValidator(new AddressModelValidator());
-            RuleFor(createUserModel => createUserModel.HomePhone).SetValidator(new PhoneModelValidator());
+            RuleFor(createUserModel => createUserModel.ResidentialAddress).SetValidator(_addressModelValidator);
+            RuleFor(createUserModel => createUserModel.HomePhone).SetValidator(_phoneModelValidator);
         }
 
 
