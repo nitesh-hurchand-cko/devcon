@@ -1,11 +1,48 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Dev COnference 2015</title>
+    <title>Dev Conference 2015</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body>
-    <button id="cors">Cors Demo</button>
+<body style="margin: 50px;">
+    <table class="table">
+        <tbody>
+            <tr>
+                <td style="width: 50%;">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">CORS Demo</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                <button type="button" class="btn btn-primary btn-lg" id="cors">
+                                    Call
+                                </button>
+                            <p><code id="corsResult"></code></p>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td style="width: 50%;">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">JSONP Demo</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                <button type="button" class="btn btn-primary btn-lg" id="jsonp">
+                                    Call
+                                </button>
+                            <p><code id="jsonpResult"></code></p>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
     <script>
         $("#cors").click(function () {
@@ -14,14 +51,31 @@
                 url: "http://localhost/Checkout.DevCon/account/login",
                 contentType: "application/json;charset=UTF-8",
                 dataType: "json",
-                data: JSON.stringify({ username: "John", password: "Boston" })
+                data: JSON.stringify({ username: "admin", password: "admin" })
             })
-             .done(function (data) {
-                 alert(JSON.stringify(data));
-             })
-             .fail(function () {
-                 alert("error");
-             });
+                .done(function (data) {
+                    $("#corsResult").html(JSON.stringify(data));
+                })
+                .fail(function () {
+                    $("#corsResult").html("error");
+                });
+        });
+
+        $("#jsonp").click(function () {
+            var jqxhr = $.ajax({
+                type: "GET",
+                url: "http://localhost/Checkout.DevCon/account/jsonp/login",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "jsonp",
+                data: "jsonp=" + JSON.stringify({ username: "admin", password: "admin" })
+            })
+                .done(function (data) {
+                    $("#jsonpResult").html(JSON.stringify(data));
+                })
+                .fail(function () {
+                    $("#jsonpResult").html("error");
+                })
+            ;
         });
     </script>
 </body>
