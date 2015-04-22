@@ -1,12 +1,10 @@
-﻿using System;
-using System.Web;
-using Checkout.DevCon.Formatters;
+﻿using Checkout.DevCon.Formatters;
 using Checkout.DevCon.Handlers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.ExceptionHandling;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Checkout.DevCon
 {
@@ -14,23 +12,19 @@ namespace Checkout.DevCon
     {
         public static void Register(HttpConfiguration config)
         {
-            //// Web API configuration and services
-            //// Configure Web API to use only bearer token authentication.
-            //config.SuppressDefaultHostAuthentication();
-
-            // Web API routes
+            //ROUTES
             config.MapHttpAttributeRoutes();
 
-            //Handlers
-            config.Services.Add(typeof(IExceptionLogger), new Handlers.ExceptionLoggerHandler());
-            config.Services.Replace(typeof(IExceptionHandler), new Checkout.DevCon.Handlers.ExceptionHandler());
+            //HANDLERS
+            config.Services.Add(typeof(IExceptionLogger), new ExceptionLoggerHandler());
+            config.Services.Replace(typeof(IExceptionHandler), new Handlers.ExceptionHandler());
             config.MessageHandlers.Add(new InOutHandler());
 
-            //Cors
+            //CORS SUPPORT
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
-            //Formatters
+            //FORMATTERS
             config.Formatters.Clear();
             var jsonSerializerSettings = new JsonSerializerSettings
             {
@@ -42,6 +36,17 @@ namespace Checkout.DevCon
             };
             var jsonFormatter = new CustomJsonMediaTypeFormatter(jsonSerializerSettings);
             config.Formatters.Add(jsonFormatter);
+
+            var xmlSerializerSettings = new JsonSerializerSettings
+            {
+                MissingMemberHandling = MissingMemberHandling.Ignore,
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Utc,
+                DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                DateFormatString = "yyyy-MM-ddTHH:mm:ssZ"
+            };
+            var xmlFormatter = new CustomXmlMediaTypeFormatter(xmlSerializerSettings);
+            //config.Formatters.Add(xmlFormatter);
         }
     }
 }

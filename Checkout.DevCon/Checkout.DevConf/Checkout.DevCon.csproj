@@ -193,6 +193,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ThrowExceptionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Formatters\CustomXmlMediaTypeFormatter.cs" />
     <Compile Include="Formatters\CustomJsonMediaTypeFormatter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
