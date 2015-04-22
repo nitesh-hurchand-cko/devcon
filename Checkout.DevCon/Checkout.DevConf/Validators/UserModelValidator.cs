@@ -14,19 +14,17 @@ namespace Checkout.DevCon.Validators
         public UserModelValidator(IPhoneModelValidator phoneModelValidator,
             IAddressModelValidator addressModelValidator)
         {
+            CascadeMode = CascadeMode.StopOnFirstFailure;
+
             _phoneModelValidator = phoneModelValidator;
             _addressModelValidator = addressModelValidator;
 
-            //NotNull Validator
-            RuleFor(createUserModel => createUserModel.FirstName)
-                .NotNull()
-                .WithLocalizedMessage(() => UserModelResources.FirstNameRequired);
-            //NotEmpty Validator
-            RuleFor(createUserModel => createUserModel.FirstName)
-                .NotEmpty()
-                .WithLocalizedMessage(() => UserModelResources.FirstNameRequired);
 
-            //Chaining Validators for the Same Property
+
+            //NotEmpty Validator and using default validation messages
+            RuleFor(createUserModel => createUserModel.FirstName).NotEmpty();
+
+            //Chaining Validators for the same Property
             RuleFor(createUserModel => createUserModel.LastName)
                 .NotNull()
                 .NotEmpty()
