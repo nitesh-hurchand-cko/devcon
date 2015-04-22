@@ -1,4 +1,7 @@
-﻿using Checkout.DevCon.Models;
+﻿using System.Linq;
+using Checkout.DevCon.Models;
+using Checkout.DevCon.Validators;
+using FluentValidation.Results;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,6 +18,15 @@ namespace Checkout.DevCon.Controllers
         public object Post(CreateUserModel model)
         {
             const string locale = "en";
+            if (model == null)
+                return "Required fields missing.";
+
+            UserModelValidator userModelValidator = new UserModelValidator();
+            ValidationResult validationResults = userModelValidator.Validate(model);
+            if (!validationResults.IsValid)
+            {
+                return validationResults.Errors.Select(x => x.ErrorMessage);
+            }
 
             var emailResult = VerifyEmail(model.Email, "ev-615b17594828aa4cafffe7eb708a4fdc");
 
@@ -43,6 +55,15 @@ namespace Checkout.DevCon.Controllers
         public object Post2(CreateUserModel model)
         {
             const string locale = "en";
+            if (model == null)
+                return "Required fields missing.";
+
+            UserModelValidator userModelValidator = new UserModelValidator();
+           ValidationResult validationResults = userModelValidator.Validate(model);
+            if (!validationResults.IsValid)
+            {
+                return validationResults.Errors.Select(x => x.ErrorMessage);
+            }
 
             var task1 = Task.Run(() => VerifyEmail(model.Email, "ev-615b17594828aa4cafffe7eb708a4fdc"));
             var task2 = Task.Run(() => VerifyAddress(model.ResidentialAddress, locale, "av-615b17594828aa4cafffe7eb708a4fdc"));

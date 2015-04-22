@@ -205,7 +205,11 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\UserModelResources.Designer.cs" />
+    <Compile Include="Resources\UserModelResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserModelResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\LoginModelValidator.cs" />
     <Compile Include="Validators\AddressModelValidator.cs" />
@@ -227,17 +231,19 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\UserModelResources.FR.resx" />
+    <EmbeddedResource Include="Resources\UserModelResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserModelResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="NLog.config" />
     <Content Include="App_Data\logs\ErrorLogs-2015-04-21.log" />
     <Content Include="App_Data\logs\ErrorLogs-2015-04-22.log" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\UserModelResources.fr.resx" />
-    <EmbeddedResource Include="Resources\UserModelResources.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
