@@ -1,11 +1,11 @@
-﻿using Checkout.DevCon.Controllers;
+﻿using Checkout.DevCon.Models;
 using FluentValidation;
 
 namespace Checkout.DevCon.Validators
 {
-    public class AccountValidator : AbstractValidator<AccountController.LoginDto>
+    public class LoginModelValidator : AbstractValidator<LoginModel>, ILoginModelValidator
     {
-        public AccountValidator()
+        public LoginModelValidator()
         {
             CascadeMode = CascadeMode.StopOnFirstFailure;
 

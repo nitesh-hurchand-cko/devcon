@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Checkout.DevCon.Resources;
+﻿using Checkout.DevCon.Resources;
 using FluentValidation;
 
 namespace Checkout.DevCon.Validators
 {
-    public class AddressModelValidator : AbstractValidator<Models.AddressModel>
+    public class AddressModelValidator : AbstractValidator<Models.AddressModel>, IAddressModelValidator
     {
         public AddressModelValidator()
         {

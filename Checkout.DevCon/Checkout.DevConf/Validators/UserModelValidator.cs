@@ -6,7 +6,7 @@ using FluentValidation;
 
 namespace Checkout.DevCon.Validators
 {
-    public class UserModelValidator : AbstractValidator<Models.CreateUserModel>
+    public class UserModelValidator : AbstractValidator<CreateUserModel>, IUserModelValidator
     {
         public UserModelValidator()
         {

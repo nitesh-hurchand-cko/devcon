@@ -1,4 +1,6 @@
-﻿using Checkout.DevCon.Formatters;
+﻿using System;
+using System.Web;
+using Checkout.DevCon.Formatters;
 using Checkout.DevCon.Handlers;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -40,13 +42,6 @@ namespace Checkout.DevCon
             };
             var jsonFormatter = new CustomJsonMediaTypeFormatter(jsonSerializerSettings);
             config.Formatters.Add(jsonFormatter);
-
-            //Ioc
-            //var kernel = new StandardKernel();
-            //kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-            //kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-            
-            //config.DependencyResolver = new NinjectDependencyResolver(kernel);
         }
     }
 }
