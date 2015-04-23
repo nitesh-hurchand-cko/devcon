@@ -3,7 +3,6 @@ using System.Web.Http;
 
 namespace Checkout.DevCon.Controllers
 {
-    //[RoutePrefix("")]
     public class ThrowExceptionController : ApiController
     {
         [Route("errors")]
