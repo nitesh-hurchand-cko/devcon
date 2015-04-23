@@ -46,7 +46,7 @@ namespace Checkout.DevCon
                 DateFormatString = "yyyy-MM-ddTHH:mm:ssZ"
             };
             var xmlFormatter = new CustomXmlMediaTypeFormatter(xmlSerializerSettings);
-            //config.Formatters.Add(xmlFormatter);
+            config.Formatters.Add(xmlFormatter);
         }
     }
 }

@@ -54,8 +54,6 @@ namespace Checkout.DevCon.Formatters
                 : JsonConvert.SerializeObject(value, Formatting.None, _xmlSerializerSettings);
 
             var result = JsonConvert.DeserializeXmlNode(jsonContent, "data", true);
-            if (result.DocumentElement != null)
-                result.DocumentElement.SetAttribute("xmlns:json", "http://www.checkout.com/apis/json");
             var cleanString = Regex.Replace(result.OuterXml, "xmlns:json=\"http://james.newtonking.com/projects/json\"", string.Empty);
             var buf = System.Text.Encoding.UTF8.GetBytes(cleanString);
             stream.Write(buf, 0, buf.Length);
