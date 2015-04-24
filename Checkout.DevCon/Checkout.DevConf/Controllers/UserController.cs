@@ -31,7 +31,7 @@ namespace Checkout.DevCon.Controllers
             {
                 browserLocale = Request.Headers.GetValues("Locale").FirstOrDefault();
             }
-            catch 
+            catch
             {
             }
 
@@ -98,7 +98,7 @@ namespace Checkout.DevCon.Controllers
             var task3 = Task.Run(() => VerifyAddress(model.WorkAddress, locale, "av-615b17594828aa4cafffe7eb708a4fdc"));
             var task4 = Task.Run(() => VerifyPhone(model.MobilePhone, locale, "pv-615b17594828aa4cafffe7eb708a4fdc"));
             var task5 = Task.Run(() => VerifyPhone(model.HomePhone, locale, "pv-615b17594828aa4cafffe7eb708a4fdc"));
-            
+
             Task.WaitAll();
             var emailResult = task1.Result;
             var residentialAddressResult = task2.Result;
@@ -121,23 +121,34 @@ namespace Checkout.DevCon.Controllers
 
         public EmailResult VerifyEmail(string email, string apiKey)
         {
-            const String apiurl = "http://api1.email-validator.net/api/verify";
-            var client = new HttpClient();
-
-            var postData = new List<KeyValuePair<string, string>>
+            try
             {
-                new KeyValuePair<string, string>("EmailAddress", email),
-                //new KeyValuePair<string, string>("APIKey", apiKey)
-            };
 
-            HttpContent content = new FormUrlEncodedContent(postData);
+                const String apiurl = "http://api1.email-validator.net/api/verify";
+                var client = new HttpClient();
 
-            var result = client.PostAsync(apiurl, content).Result;
-            var resultContent = result.Content.ReadAsStringAsync().Result;
+                var postData = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("EmailAddress", email),
+                    //new KeyValuePair<string, string>("APIKey", apiKey)
+                };
 
-            var emailResult = JsonConvert.DeserializeObject<EmailResult>(resultContent);
+                HttpContent content = new FormUrlEncodedContent(postData);
 
-            return emailResult;
+                var result = client.PostAsync(apiurl, content).Result;
+                var resultContent = result.Content.ReadAsStringAsync().Result;
+
+                var emailResult = JsonConvert.DeserializeObject<EmailResult>(resultContent);
+
+                return emailResult;
+            }
+            catch (Exception exception)
+            {
+                return new EmailResult
+                {
+
+                };
+            }
         }
 
         public class EmailResult
@@ -154,31 +165,41 @@ namespace Checkout.DevCon.Controllers
 
         public AddressResult VerifyAddress(AddressModel addressModel, string locale, string apiKey)
         {
-            const String apiurl = "http://api.address-validator.net/api/verify";
-            var client = new HttpClient();
-
-            var postData = new List<KeyValuePair<string, string>>
+            try
             {
-                new KeyValuePair<string, string>("StreetAddress", addressModel.Line1),
-                new KeyValuePair<string, string>("City", addressModel.City),
-                new KeyValuePair<string, string>("PostalCode", addressModel.Zip),
-                new KeyValuePair<string, string>("State", addressModel.State),
-                new KeyValuePair<string, string>("CountryCode", addressModel.CountryCode),
-                new KeyValuePair<string, string>("Locale", locale),
-                //new KeyValuePair<string, string>("APIKey", apiKey)
-            };
+                const String apiurl = "http://api.address-validator.net/api/verify";
+                var client = new HttpClient();
 
-            if (!string.IsNullOrWhiteSpace(addressModel.Line2))
-                postData.Add(new KeyValuePair<string, string>("AdditionalAddressInfo", addressModel.Line2));
+                var postData = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("StreetAddress", addressModel.Line1),
+                    new KeyValuePair<string, string>("City", addressModel.City),
+                    new KeyValuePair<string, string>("PostalCode", addressModel.Zip),
+                    new KeyValuePair<string, string>("State", addressModel.State),
+                    new KeyValuePair<string, string>("CountryCode", addressModel.CountryCode),
+                    new KeyValuePair<string, string>("Locale", locale),
+                    //new KeyValuePair<string, string>("APIKey", apiKey)
+                };
 
-            HttpContent content = new FormUrlEncodedContent(postData);
+                if (!string.IsNullOrWhiteSpace(addressModel.Line2))
+                    postData.Add(new KeyValuePair<string, string>("AdditionalAddressInfo", addressModel.Line2));
 
-            var result = client.PostAsync(apiurl, content).Result;
-            var resultContent = result.Content.ReadAsStringAsync().Result;
+                HttpContent content = new FormUrlEncodedContent(postData);
 
-            var addressResult = JsonConvert.DeserializeObject<AddressResult>(resultContent);
+                var result = client.PostAsync(apiurl, content).Result;
+                var resultContent = result.Content.ReadAsStringAsync().Result;
 
-            return addressResult;
+                var addressResult = JsonConvert.DeserializeObject<AddressResult>(resultContent);
+
+                return addressResult;
+            }
+            catch (Exception exception)
+            {
+                return new AddressResult
+                {
+                    Status = "FAIL"
+                };
+            }
         }
 
         public class AddressResult
@@ -207,25 +228,35 @@ namespace Checkout.DevCon.Controllers
 
         public PhoneResult VerifyPhone(PhoneModel phoneModel, string locale, string apiKey)
         {
-            const String apiurl = "http://api.phone-validator.net/api/v2/verify";
-            var client = new HttpClient();
-
-            var postData = new List<KeyValuePair<string, string>>
+            try
             {
-                new KeyValuePair<string, string>("PhoneNumber", phoneModel.Number),
-                new KeyValuePair<string, string>("CountryCode", phoneModel.CountryCode),
-                new KeyValuePair<string, string>("Locale", locale),
-                //new KeyValuePair<string, string>("APIKey", apiKey)
-            };
+                const String apiurl = "http://api.phone-validator.net/api/v2/verify";
+                var client = new HttpClient();
 
-            HttpContent content = new FormUrlEncodedContent(postData);
+                var postData = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("PhoneNumber", phoneModel.Number),
+                    new KeyValuePair<string, string>("CountryCode", phoneModel.CountryCode),
+                    new KeyValuePair<string, string>("Locale", locale),
+                    //new KeyValuePair<string, string>("APIKey", apiKey)
+                };
 
-            var result = client.PostAsync(apiurl, content).Result;
-            var resultContent = result.Content.ReadAsStringAsync().Result;
+                HttpContent content = new FormUrlEncodedContent(postData);
 
-            var phoneResult = JsonConvert.DeserializeObject<PhoneResult>(resultContent);
+                var result = client.PostAsync(apiurl, content).Result;
+                var resultContent = result.Content.ReadAsStringAsync().Result;
 
-            return phoneResult;
+                var phoneResult = JsonConvert.DeserializeObject<PhoneResult>(resultContent);
+
+                return phoneResult;
+            }
+            catch (Exception exception)
+            {
+                return new PhoneResult
+                {
+                    Status = "FAIL"
+                };
+            }
         }
 
         public class PhoneResult

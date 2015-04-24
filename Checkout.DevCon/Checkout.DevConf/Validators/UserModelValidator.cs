@@ -59,9 +59,9 @@ namespace Checkout.DevCon.Validators
 
         #region Private methods
 
-        private bool IsValidEmail(string url)
+        private bool IsValidEmail(string email)
         {
-            if (url == null)
+            if (email == null)
             {
                 return true;
             }
@@ -71,7 +71,7 @@ namespace Checkout.DevCon.Validators
                     @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
                     @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
                     RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-            return regex.IsMatch(url);
+            return regex.IsMatch(email);
         }
 
         #endregion
