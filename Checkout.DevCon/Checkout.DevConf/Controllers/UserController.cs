@@ -13,7 +13,6 @@ using System.Web.Http;
 
 namespace Checkout.DevCon.Controllers
 {
-    //[RoutePrefix("users")]
     public class UserController : ApiController
     {
         private readonly IUserModelValidator _userModelValidator;
@@ -25,6 +24,40 @@ namespace Checkout.DevCon.Controllers
 
         [Route("users")]
         public object Post(CreateUserModel model)
+        {
+            SetCulture();
+
+            const string locale = "en";
+            if (model == null)
+                return "Required fields missing.";
+
+            ValidationResult validationResults = _userModelValidator.Validate(model);
+            if (!validationResults.IsValid)
+            {
+                return validationResults.Errors.Select(x => x.ErrorMessage);
+            }
+
+            var emailResult = VerifyEmail(model.Email, "ev-615b17594828aa4cafffe7eb708a4fdc");
+
+            var residentialAddressResult = VerifyAddress(model.ResidentialAddress, locale, "av-615b17594828aa4cafffe7eb708a4fdc");
+            var workAddressResult = VerifyAddress(model.WorkAddress, locale, "av-615b17594828aa4cafffe7eb708a4fdc");
+
+            var mobilePhoneResult = VerifyPhone(model.MobilePhone, locale, "pv-615b17594828aa4cafffe7eb708a4fdc");
+            var homePhoneResult = VerifyPhone(model.HomePhone, locale, "pv-615b17594828aa4cafffe7eb708a4fdc");
+            
+            return new
+            {
+                firstName = model.FirstName,
+                lastName = model.LastName,
+                email = emailResult,
+                residentialAddress = residentialAddressResult,
+                workAddress = workAddressResult,
+                mobilePhone = mobilePhoneResult,
+                homePhone = homePhoneResult,
+            };
+        }
+
+        private void SetCulture()
         {
             var browserLocale = "en";
             try
@@ -46,43 +79,13 @@ namespace Checkout.DevCon.Controllers
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             }
-
-            const string locale = "en";
-            if (model == null)
-                return "Required fields missing.";
-
-            ValidationResult validationResults = _userModelValidator.Validate(model);
-            if (!validationResults.IsValid)
-            {
-                return validationResults.Errors.Select(x => x.ErrorMessage);
-            }
-
-            var emailResult = VerifyEmail(model.Email, "ev-615b17594828aa4cafffe7eb708a4fdc");
-
-            var residentialAddressResult = VerifyAddress(model.ResidentialAddress, locale, "av-615b17594828aa4cafffe7eb708a4fdc");
-            var workAddressResult = VerifyAddress(model.WorkAddress, locale, "av-615b17594828aa4cafffe7eb708a4fdc");
-
-            var mobilePhoneResult = VerifyPhone(model.MobilePhone, locale, "pv-615b17594828aa4cafffe7eb708a4fdc");
-            var homePhoneResult = VerifyPhone(model.HomePhone, locale, "pv-615b17594828aa4cafffe7eb708a4fdc");
-
-
-            //create user if validations are successfull
-
-            return new
-            {
-                firstName = model.FirstName,
-                lastName = model.LastName,
-                email = emailResult,
-                residentialAddress = residentialAddressResult,
-                workAddress = workAddressResult,
-                mobilePhone = mobilePhoneResult,
-                homePhone = homePhoneResult,
-            };
         }
 
         [Route("users2")]
         public object Post2(CreateUserModel model)
         {
+            SetCulture();
+
             const string locale = "en";
             if (model == null)
                 return "Required fields missing.";
@@ -105,7 +108,6 @@ namespace Checkout.DevCon.Controllers
             var workAddressResult = task3.Result;
             var mobilePhoneResult = task4.Result;
             var homePhoneResult = task5.Result;
-            //create user if validations are successfull
 
             return new
             {
@@ -130,7 +132,6 @@ namespace Checkout.DevCon.Controllers
                 var postData = new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("EmailAddress", email),
-                    //new KeyValuePair<string, string>("APIKey", apiKey)
                 };
 
                 HttpContent content = new FormUrlEncodedContent(postData);
@@ -178,7 +179,6 @@ namespace Checkout.DevCon.Controllers
                     new KeyValuePair<string, string>("State", addressModel.State),
                     new KeyValuePair<string, string>("CountryCode", addressModel.CountryCode),
                     new KeyValuePair<string, string>("Locale", locale),
-                    //new KeyValuePair<string, string>("APIKey", apiKey)
                 };
 
                 if (!string.IsNullOrWhiteSpace(addressModel.Line2))
@@ -238,7 +238,6 @@ namespace Checkout.DevCon.Controllers
                     new KeyValuePair<string, string>("PhoneNumber", phoneModel.Number),
                     new KeyValuePair<string, string>("CountryCode", phoneModel.CountryCode),
                     new KeyValuePair<string, string>("Locale", locale),
-                    //new KeyValuePair<string, string>("APIKey", apiKey)
                 };
 
                 HttpContent content = new FormUrlEncodedContent(postData);
