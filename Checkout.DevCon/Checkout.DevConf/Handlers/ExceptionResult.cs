@@ -28,27 +28,6 @@ namespace Checkout.DevCon.Handlers
                 ErrorCode = 50000,
                 ErrorMessage = "Something went wrong with the data you have sent."
             });
-
-            //var message = new HttpResponseMessage
-            //{
-            //    RequestMessage = Request,
-            //    StatusCode = HttpStatusCode.BadRequest,
-            //};
-
-            //var result = ContentNegotiator.Negotiate(typeof(object), Request, Formatters);
-
-            //if (result != null)
-            //{
-            //    try
-            //    {
-            //        message.Content = new ObjectContent<object>(message, result.Formatter, result.MediaType);
-            //    }
-            //    catch (Exception)
-            //    {
-            //        message.Dispose();
-            //        throw;
-            //    }
-            //}
             return Task.FromResult(message);
         }
     }

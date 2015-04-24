@@ -5,11 +5,10 @@ using Owin;
 
 namespace Checkout.DevCon
 {
-    public partial class Startup
+    public class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
         }
     }
 }
