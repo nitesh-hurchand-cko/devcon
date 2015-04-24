@@ -130,7 +130,7 @@
     <value>Adresse e-mail n'est pas valide .</value>
   </data>
   <data name="FirstNameRequired" xml:space="preserve">
-    <value>Le prénom est requis.</value>
+    <value>Veuillez saisir votre prénom.</value>
   </data>
   <data name="LastNameRequired" xml:space="preserve">
     <value>Le nom est requis.</value>
